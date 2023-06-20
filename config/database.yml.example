@@ -1,0 +1,20 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  username: wms
+  password: wms
+  # For details on connection pooling, see Rails configuration guide
+  # https://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: 5
+
+development:
+  <<: *default
+  database: tutor_app_development
+
+test:
+  <<: *default
+  database: tutor_app_test
+
+production:
+  <<: *default
+  database: tutor_app_production

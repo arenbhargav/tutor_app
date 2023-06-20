@@ -27,3 +27,25 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+# Ignore local development configuration
+/config/database.yml
+/config/application.yml
+
+# Ignore environment-specific files
+.env
+.env.*
+*.env
+
+# Ignore sensitive files
+config/master.key
+/config/credentials.yml.enc
+
+# Ignore IDE and editor files
+/.idea/
+/.vscode/
+
+# Ignore log files
+/log/*.log
+/tmp/
+config/database.yml
