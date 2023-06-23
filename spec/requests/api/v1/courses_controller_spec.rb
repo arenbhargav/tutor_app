@@ -25,11 +25,11 @@ RSpec.describe Api::V1::CoursesController, type: :controller do
   end
 
   describe 'POST #create' do
-    subject(:get_request) { post :create, params: params }
+    subject(:post_request) { post :create, params: params }
 
     before do
       tutor_login(tutor)
-      get_request
+      post_request
     end
 
     context 'with valid parameters' do
@@ -50,7 +50,7 @@ RSpec.describe Api::V1::CoursesController, type: :controller do
       end
 
       it 'creates a new course with tutors' do
-        expect(get_request).to have_http_status(:created)
+        expect(post_request).to have_http_status(:created)
 
         response_json = JSON.parse(response.body)
         expect(response_json['name']).to eq('Math')
